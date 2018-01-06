@@ -5,7 +5,8 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
 
 export default class home extends Component{
@@ -14,9 +15,20 @@ export default class home extends Component{
     };
 
     render(){
+        const { navigate } = this.props.navigation;
         return(
-            <View>
+            <View style={{display:'flex', alignItems:'center',justifyContent:'center'} }>
                 <Text>hello from home</Text>
+                <Button title="Electronics"
+                    color="#000"
+                    style={{margin:10, flex:1}}
+                    onPress = {() => navigate('Products', {cat: 'electronics'} )}
+                    />
+                    <Button title="Automobiles"
+                    color="green"
+                    
+                    onPress = {() => navigate('Products', {cat: 'automobiles'} )}
+                    />
             </View>
         )
 

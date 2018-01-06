@@ -14,9 +14,12 @@ export default class products extends Component{
     };
 
     render(){
+        const { params } =this.props.navigation.state;
         return(
             <View>
                 <Text>hello from produts</Text>
+                <Text 
+                style={{color:'#000', fontWeight:'bold'}}>Category Name: {params.cat}</Text>
             </View>
         )
 
